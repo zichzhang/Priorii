@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Priorii/TimeDivider.dart';
 import 'package:Priorii/WeekView.dart';
+import 'package:Priorii/RealtimeDates.dart';
 import 'models/global.dart';
 
 void main() => runApp(Priorii());
@@ -58,7 +59,7 @@ class Priorii extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(top: 13, left: 23),
                 child: Text(
-                  'A U G U S T',
+                  monospaceString(month).toUpperCase(),
                   style: TextStyle(
                     fontFamily: 'Calibri',
                     fontWeight: FontWeight.w800,
