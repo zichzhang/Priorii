@@ -42,7 +42,7 @@ class DailyBox extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(bottom: 7, left: 7, right: 7),
                     child: Text(
-                      dailyLetter,
+                      dailyLetter.toUpperCase(),
                       style: TextStyle(
                         fontFamily: 'Calibri',
                         fontSize: 11,

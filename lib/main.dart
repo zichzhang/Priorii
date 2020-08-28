@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Priorii/DailyBox.dart';
 import 'package:Priorii/TimeDivider.dart';
+import 'package:Priorii/WeekView.dart';
 import 'models/global.dart';
 
 void main() => runApp(Priorii());
@@ -54,25 +54,16 @@ class Priorii extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              GestureDetector(
-                onTap: () => {
-                  print('Clicked Last Week')
-                },
-                child: Container(
-                  alignment: Alignment.topLeft,
-                  margin: const EdgeInsets.only(top: 13, left: 23),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontFamily: 'Calibri',
-                        fontSize: 13,
-                        color: Colors.black,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(text: 'L A S T ', style: TextStyle(fontWeight: FontWeight.normal)),
-                        TextSpan(text: ' W E E K', style: TextStyle(fontWeight: FontWeight.bold)),
-                      ]
-                    ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 13, left: 23),
+                child: Text(
+                  'A U G U S T',
+                  style: TextStyle(
+                    fontFamily: 'Calibri',
+                    fontWeight: FontWeight.w800,
+                    fontSize: 13,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -100,20 +91,15 @@ class Priorii extends StatelessWidget {
               ),
             ],
           ),
-          Container( // Container for the daily container and the dots
-            alignment: Alignment.topRight,
-            margin: const EdgeInsets.only(top: 15, bottom: 10, left: 10, right: 10),
-            child: Row( // Row for the seven (days+dots) of the week
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[ 
-                DailyBox(dailyNumber: '1 8', dailyLetter: 'S', paintingStyle: PaintingStyle.fill),
-                DailyBox(dailyNumber: '1 9', dailyLetter: 'M', fontweight: FontWeight.bold, paintingStyle: PaintingStyle.fill),
-                DailyBox(dailyNumber: '2 0', dailyLetter: 'T'),
-                DailyBox(dailyNumber: '2 1', dailyLetter: 'W'),
-                DailyBox(dailyNumber: '2 2', dailyLetter: 'T'),
-                DailyBox(dailyNumber: '2 3', dailyLetter: 'F'),
-                DailyBox(dailyNumber: '2 4', dailyLetter: 'S'),
-              ],
+          Expanded(
+            child: Container( // Container for the daily container and the dots
+              margin: const EdgeInsets.only(top: 15, bottom: 10, left: 10, right: 10),
+              child: PageView(
+                children: <Widget>[
+                  WeekView(),
+                  WeekView(day1: 7, day2: 8, day3: 9, day4: 10, day5: 11, day6: 12, day7: 13,)
+                ],
+              ),
             ),
           ),
         ],
