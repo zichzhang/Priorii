@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Priorii/DailyBox.dart';
-import 'package:Priorii/RealtimeDates.dart';
+import 'package:Priorii/screens/home/DailyBox.dart';
+import 'package:Priorii/screens/home/RealtimeDates.dart';
 import 'package:intl/intl.dart';
 
 String concatenateDay(String date) {

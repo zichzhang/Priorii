@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Priorii/DrawCircle.dart';
-import 'models/global.dart';
+import 'package:Priorii/screens/home/DrawCircle.dart';
+import 'package:Priorii/models/global.dart';
 
 class DailyBox extends StatelessWidget {
 

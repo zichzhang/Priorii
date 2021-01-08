@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'models/global.dart';
+import 'package:Priorii/models/global.dart';
 
 class DrawCircle extends CustomPainter {
   Paint _paint;
