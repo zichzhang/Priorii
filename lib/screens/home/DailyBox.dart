@@ -21,7 +21,7 @@ class DailyBox extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(color: greyBorderColor),
               borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: yellowColor,
+              color: lilacColor,
             ),
             child: InkWell(
               borderRadius: BorderRadius.all(Radius.circular(10)),
