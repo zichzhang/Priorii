@@ -2,18 +2,19 @@ import 'package:Priorii/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:Priorii/services/auth.dart';
 import 'package:Priorii/models/global.dart';
-import 'package:Priorii/shared/Loading.dart';
+import 'package:Priorii/shared/loading.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
 
   final Function toggleView;
-  SignIn({ this.toggleView });
+  Register({ this.toggleView });
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
+
   // create an instance of AuthService
   final AuthService _auth = AuthService(); 
   final _formKey = GlobalKey<FormState>();
@@ -64,7 +65,7 @@ class _SignInState extends State<SignIn> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: Text(
-                      'Sign in',
+                      'Register',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'calibri',
@@ -73,26 +74,26 @@ class _SignInState extends State<SignIn> {
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
                         setState(() => isLoading = true);
-                        dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                        dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                         if (result == null) {
-                          setState(() {
-                            error = 'Invalid email or password';
+                          setState(() { 
+                            error = 'Please supply a valid email';
                             isLoading = false;
-                          });
+                          }); 
                         } 
                       }
                     }
                   ),
                   InkWell(
                     onTap: () {
-                      widget.toggleView();
+                    widget.toggleView();
                     },
                     child: Text(
-                      'Register',
+                      'Sign in',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'calibri',
-                        decoration: TextDecoration.underline,
+                      color: Colors.black,
+                      fontFamily: 'calibri',
+                      decoration: TextDecoration.underline,
                       ),
                     ),
                   ),

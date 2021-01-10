@@ -5,7 +5,6 @@ import 'package:Priorii/screens/authenticate/authenticate.dart';
 import 'package:Priorii/screens/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:Priorii/models/user.dart';
-import 'models/global.dart';
 
 void main() => runApp(Priorii());
 

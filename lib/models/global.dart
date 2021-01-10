@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color greyColor = new Color(0xFFE8ECF1);
-Color greyBackgroundColor = new Color(0xFFF7F9FA);
-Color lilacColor = new Color(0xFFe6d7ff);
-Color greyBorderColor = new Color(0xFF99A0A5);
+const Color greyColor = Color(0xFFE8ECF1);
+const Color greyBackgroundColor = Color(0xFFF7F9FA);
+const Color lilacColor = Color(0xFFe6d7ff);
+const Color greyBorderColor = Color(0xFF99A0A5);
